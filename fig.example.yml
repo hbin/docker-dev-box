@@ -1,0 +1,18 @@
+nginx:
+  build: nginx
+  ports:
+    - "80:80"
+  links:
+    - web:web
+web:
+  build: web
+  expose:
+    - "5000"
+db:
+  build: db
+  expose:
+    - "5432"
+redis:
+  build: redis
+  expose:
+    - "6379"
